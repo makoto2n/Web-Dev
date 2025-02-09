@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum Salaries</title>
+</head>
+<body>
+  <h1>Sum Salaries Example</h1>
+  
+  <script>
+    // Function to calculate the sum of all salaries
+    function sumSalaries(salaries) {
+      let sum = 0;
+      // Use Object.values to get an array of salary values and iterate with for..of loop
+      for (let salary of Object.values(salaries)) {
+        sum += salary;
+      }
+      return sum;
+    }
+
+    // Example usage
+    let salaries = {
+      "John": 100,
+      "Pete": 300,
+      "Mary": 250
+    };
+
+    alert(sumSalaries(salaries)); // 650
+  </script>
+</body>
+</html>

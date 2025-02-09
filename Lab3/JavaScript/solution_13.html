@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Operations</title>
+</head>
+<body>
+  <h1>Array Operations</h1>
+  
+  <script>
+    // Create an array with "Jazz" and "Blues"
+    let styles = ["Jazz", "Blues"];
+    console.log(styles); // Jazz, Blues
+
+    // Append "Rock-n-Roll" to the end
+    styles.push("Rock-n-Roll");
+    console.log(styles); // Jazz, Blues, Rock-n-Roll
+
+    // Replace the middle value with "Classics"
+    let middleIndex = Math.floor(styles.length / 2); // Find the middle index
+    styles[middleIndex] = "Classics";
+    console.log(styles); // Jazz, Classics, Rock-n-Roll
+
+    // Strip off the first value and show it
+    let firstValue = styles.shift(); // Remove the first value
+    console.log(firstValue); // Jazz
+    console.log(styles); // Classics, Rock-n-Roll
+
+    // Prepend "Rap" and "Reggae" to the array
+    styles.unshift("Rap", "Reggae");
+    console.log(styles); // Rap, Reggae, Classics, Rock-n-Roll
+  </script>
+</body>
+</html>

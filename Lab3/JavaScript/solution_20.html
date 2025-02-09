@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replacer Function Example</title>
+</head>
+<body>
+  <h1>Circular Reference Example</h1>
+  
+  <script>
+    let room = {
+      number: 23
+    };
+
+    let meetup = {
+      title: "Conference",
+      occupiedBy: [{name: "John"}, {name: "Alice"}],
+      place: room
+    };
+
+    // circular references
+    room.occupiedBy = meetup;
+    meetup.self = meetup;
+
+    // Replacer function to handle circular references and exclude meetup reference
+    function replacer(key, value) {
+      if (value === meetup) {
+        return undefined; // Remove the property that references meetup
+      }
+      return value;
+    }
+
+    // Using JSON.stringify with the replacer function
+    alert(JSON.stringify(meetup, replacer));
+
+  </script>
+</body>
+</html>

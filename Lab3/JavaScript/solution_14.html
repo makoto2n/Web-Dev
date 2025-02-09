@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum Input Example</title>
+</head>
+<body>
+  <h1>Sum Input Example</h1>
+  
+  <script>
+    function sumInput() {
+      let values = [];
+      let sum = 0;
+      
+      while (true) {
+        let input = prompt("Enter a number:");
+        
+        // Stop if the user presses "Cancel", enters an empty string, or enters a non-numeric value
+        if (input === null || input === '' || isNaN(input)) {
+          break;
+        }
+        
+        // Convert the input to a number and store it in the array
+        values.push(Number(input));
+      }
+      
+      // Calculate the sum of the array items
+      for (let value of values) {
+        sum += value;
+      }
+      
+      return sum;
+    }
+
+    // Test the function
+    alert("The sum is: " + sumInput());
+  </script>
+</body>
+</html>

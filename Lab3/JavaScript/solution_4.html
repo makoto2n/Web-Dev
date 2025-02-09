@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask for Name</title>
+    <script>
+        function askName() {
+            let userName = prompt("What is your name?"); // Ask for the user's name
+            if (userName) {
+                document.getElementById("output").textContent = `Hello, ${userName}!`; // Display name
+            } else {
+                document.getElementById("output").textContent = "You didn't enter a name.";
+            }
+        }
+    </script>
+</head>
+<body onload="askName()">
+    <h1>Welcome!</h1>
+    <p id="output"></p>
+</body>
+</html>

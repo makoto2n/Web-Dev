@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Integer Example</title>
+</head>
+<body>
+  <h1>Random Integer Generator</h1>
+  
+  <script>
+    // Function to generate a random integer between min and max (inclusive)
+    function randomInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Test the function
+    alert(randomInteger(1, 5)); // It can be any integer from 1 to 5
+    alert(randomInteger(1, 5)); // It can be any integer from 1 to 5
+    alert(randomInteger(1, 5)); // It can be any integer from 1 to 5
+  </script>
+</body>
+</html>

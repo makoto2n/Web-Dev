@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Number Example</title>
+</head>
+<body>
+  <h1>Read Number Function Example</h1>
+  
+  <script>
+    function readNumber() {
+      let num;
+      
+      // Keep prompting until a valid number is entered
+      while (true) {
+        num = prompt("Please enter a number:");
+
+        // If user presses "CANCEL" or enters an empty line, return null
+        if (num === null || num === '') {
+          return null;
+        }
+
+        // Try converting the input to a number and check if it's valid
+        num = Number(num);
+
+        if (!isNaN(num)) {
+          return num; // Return the valid number
+        }
+
+        // If it's not a valid number, ask again
+        alert("That's not a valid number. Please try again.");
+      }
+    }
+
+    // Test the function
+    let result = readNumber();
+    alert("The entered number is: " + result);
+  </script>
+</body>
+</html>

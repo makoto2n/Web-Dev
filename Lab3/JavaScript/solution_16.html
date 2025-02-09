@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shuffle Array</title>
+</head>
+<body>
+  <h1>Shuffle Array Example</h1>
+  
+  <script>
+    // Function to shuffle the array
+    function shuffle(array) {
+      // Loop through the array from the last element to the second element
+      for (let i = array.length - 1; i > 0; i--) {
+        // Generate a random index between 0 and i
+        let randomIndex = Math.floor(Math.random() * (i + 1));
+        
+        // Swap the elements at index i and randomIndex
+        [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+      }
+    }
+
+    // Test the shuffle function
+    let arr = [1, 2, 3];
+    console.log("Original array:", arr);
+    
+    shuffle(arr);
+    console.log("Shuffled array (1st time):", arr);
+    
+    shuffle(arr);
+    console.log("Shuffled array (2nd time):", arr);
+    
+    shuffle(arr);
+    console.log("Shuffled array (3rd time):", arr);
+  </script>
+</body>
+</html>

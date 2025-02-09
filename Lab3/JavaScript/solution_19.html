@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Ago Function</title>
+</head>
+<body>
+  <h1>Get Date Ago Example</h1>
+  
+  <script>
+    // Function to get the day of the month 'days' ago from a given date
+    function getDateAgo(date, days) {
+      let newDate = new Date(date); // Create a copy of the original date to avoid modifying it
+      newDate.setDate(newDate.getDate() - days); // Subtract the days from the date
+      return newDate.getDate(); // Return the day of the month
+    }
+
+    // Example usage
+    let date = new Date(2015, 0, 2); // 2 Jan 2015
+
+    alert(getDateAgo(date, 1));  // 1, (1 Jan 2015)
+    alert(getDateAgo(date, 2));  // 31, (31 Dec 2014)
+    alert(getDateAgo(date, 365)); // 2, (2 Jan 2014)
+  </script>
+</body>
+</html>

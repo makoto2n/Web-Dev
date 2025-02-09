@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Object Example</title>
+</head>
+<body>
+  <h1>Calculator Example</h1>
+  
+  <p>Open the console to see the result.</p>
+
+  <script>
+    let calculator = {
+      // Method to prompt for two values and save them as properties
+      read() {
+        this.a = +prompt("Enter the first number:", 0);
+        this.b = +prompt("Enter the second number:", 0);
+      },
+
+      // Method to return the sum of a and b
+      sum() {
+        return this.a + this.b;
+      },
+
+      // Method to multiply a and b and return the result
+      mul() {
+        return this.a * this.b;
+      }
+    };
+
+    // Use the methods
+    calculator.read();  // Prompt the user for input
+    alert(calculator.sum());  // Alert the sum of the values
+    alert(calculator.mul());  // Alert the product of the values
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extendable Calculator</title>
+</head>
+<body>
+  <h1>Extendable Calculator</h1>
+  
+  <script>
+    // Constructor function for Calculator
+    function Calculator() {
+      this.methods = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b
+      };
+
+      // Method to perform calculations
+      this.calculate = function(str) {
+        let [a, operator, b] = str.split(' ');
+        a = +a; // Convert to number
+        b = +b; // Convert to number
+
+        if (!this.methods[operator]) {
+          throw new Error("Unknown operator: " + operator);
+        }
+
+        return this.methods[operator](a, b);
+      };
+
+      // Method to add new operations
+      this.addMethod = function(name, func) {
+        this.methods[name] = func;
+      };
+    }
+
+    // Example usage of the calculator
+
+    // Basic calculator with + and -
+    let calc = new Calculator();
+    alert(calc.calculate("3 + 7")); // 10
+
+    // Create a new calculator with extended functionality (*, /, **)
+    let powerCalc = new Calculator();
+    powerCalc.addMethod("*", (a, b) => a * b);
+    powerCalc.addMethod("/", (a, b) => a / b);
+    powerCalc.addMethod("**", (a, b) => a ** b);
+
+    // Using the extended calculator
+    let result = powerCalc.calculate("2 ** 3");
+    alert(result); // 8
+
+  </script>
+</body>
+</html>
