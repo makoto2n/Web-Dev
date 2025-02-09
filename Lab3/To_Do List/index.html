@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <h1>ToDo List</h1>
+    <div class="container">
+        <h2>ToDo List</h2>
+        <input type="text" id="taskInput" placeholder="New Task">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+    
+    </main>
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            let taskText = taskInput.value.trim();
+            if (taskText === "") return;
+            
+            let li = document.createElement("li");
+            li.innerHTML = `
+        <input type="checkbox" class="done" onclick="toggleDone(this)">
+        <span>${taskText}</span>
+        <button onclick="removeTask(this)" class="trash"><i class="fa-solid fa-trash"></i></button>`;
+            document.getElementById("taskList").appendChild(li);
+            taskInput.value = "";
+        }
+        function toggleDone(checkbox) {
+            let li = checkbox.parentElement;
+            li.classList.toggle("completed", checkbox.checked);
+        }
+
+        function removeTask(button) {
+            button.parentElement.remove();
+        }
+        function DoneTask(button) {
+    let li = button.parentElement;
+    li.style.textDecoration = li.style.textDecoration === "line-through" ? "none" : "line-through";
+}
+
+    </script>
+        
+    </div>
+</body>
+</html>
